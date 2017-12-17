@@ -8,4 +8,42 @@
 	</div>
 	<hr>
 </div>
+<hr>
+<div class="row">
+  <?php 
+    $colcount = count($album->photos);
+    $i = 1;
+  ?>
+  <div id="photos">
+  	<div class="row text-center">
+  		@foreach($album->photos as $photo)
+  		 @if($i == $colcount)
+  		  	<div class="card" style="width: 20rem;">
+  		  		<a href="/photos/{{$photo->id}}">
+			  <img class="card-img-top" src="/storage/photos/{{$photo->album_id}}/{{$photo->photo}}" alt="Card image cap"></a>
+			  <div class="card-body">
+			    <p class="card-text">{{$photo->title}}</p>
+			  </div>
+			
+  		  	@else
+  		     <div class="card" style="width: 20rem;">
+  		  		<a href="/photos/{{$photo->id}}">
+			  <img class="card-img-top" src="/storage/photos/{{$photo->album_id}}/{{$photo->photo}}" alt="Card image cap"></a>
+			  <div class="card-body">
+			    <p class="card-text">{{$album->title}}</p>
+			  </div>
+		
+  		 	@endif
+  		 	@if($i%3 == 0)
+  		 </div>
+  		</div>
+  	<div class="row text-center">
+  		@else
+  	</div>
+  	@endif
+  	<?php $i++;?>
+  	@endforeach
+  </div>
+</div>
+</div>
 @endsection

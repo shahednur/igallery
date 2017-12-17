@@ -18,4 +18,7 @@ Route::post('/albums/store',['as'=>'store.album','uses'=>'AlbumsController@store
 Route::get('/albums/{id}','AlbumsController@show');
 Route::get('/photos/create/{id}','PhotosController@create');
 Route::post('/photos/store',['as'=>'store.photo','uses'=>'PhotosController@store']);
+Route::delete('/photos/{id}',['as'=>'delete.photo','uses'=>'PhotosController@destroy']);
+Route::get('/photos/{id}','PhotosController@show');
+
 
