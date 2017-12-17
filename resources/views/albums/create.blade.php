@@ -3,7 +3,7 @@
 @section('content')
 <div class="row">
 	<div class="col-md-12">
-		{!!Form::open(['route'=>'store.post','method'=>'POST','enctype'=>'multipart/form-data'])!!}
+		{!!Form::open(['route'=>'store.album','method'=>'POST','enctype'=>'multipart/form-data'])!!}
 		{{ csrf_field() }}
 		<div class="form-group">
           {{Form::text('name','',['placeholder'=>'Album Name','class'=>'form-control'])}}
